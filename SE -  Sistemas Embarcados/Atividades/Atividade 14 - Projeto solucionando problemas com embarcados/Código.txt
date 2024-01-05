@@ -1,0 +1,75 @@
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(13,7,8,10,11,12); // Variáveis do LCD
+
+int valor; // Valor do Sensor de gas
+
+const int entrada = A5; // Porta do Senseor de Gas
+
+const int buzzer = 9; // Porta do Buzzer
+
+void setup()
+{
+  pinMode(2, OUTPUT); //LED Vermelho
+  pinMode(3, OUTPUT); //LED Amarelo
+  pinMode(4, OUTPUT); //LED Verde
+  
+  Serial.begin(9600); //Valor da comunicação Serial
+  
+}
+
+void loop()
+{
+  valor = analogRead(entrada); 
+  // Variavel "valor" recebe o valor do sensor de Gas 
+  
+  Serial.println(valor); 
+  // Mostra o "valor" no monitor serial
+  
+  digitalWrite(2, valor >= 600 ? HIGH : LOW); 
+  // Se o "valor" for >= 600 o LED Vermelho acende
+  
+  digitalWrite(3, (valor > 350) && (valor < 600) ? HIGH : LOW);
+  // Se o "valor" for > 350 e < 600 o LED Amarelo acende
+
+  digitalWrite(4, valor <= 350 ? HIGH : LOW); 
+  // Se o "valor" for <= 350 o LED Verde acende
+  
+    
+  if ( valor >= 600 ){ 
+  /* 
+  Compara para saber qual LED será aceso, 
+  qual mensagem aparecerá e ligará o buzzer
+  */
+    //Programação da Sirene
+    tone(buzzer, 900); 
+  	delay(500);
+  	tone(buzzer, 1000);
+  	delay(500);  
+    //Programação da mensagem
+    lcd.setCursor(0, 0);
+  	lcd.write(" Ligue Para 193         ");
+    
+  } else if ( (valor > 350) && (valor < 600) ){
+    /*
+    Compara para saber qual LED será aceso, 
+    qual mensagem aparecerá e desligará o buzzer
+    */
+  	noTone (9);  
+    //Programação da mensagem
+    lcd.setCursor(0,0);
+  	lcd.write("     Cuidado         "); 
+    
+  } else { 
+    /*
+  	Compara para saber qual LED será aceso e
+    qual mensagem aparecerá
+    */   
+  	noTone (9); 
+    //Programação da mensagem
+    lcd.setCursor(0,0);
+  	lcd.write("Ambiente seguro         ");  
+      
+  }    
+}
+

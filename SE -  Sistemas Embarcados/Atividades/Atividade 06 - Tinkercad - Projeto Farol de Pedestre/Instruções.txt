@@ -1,0 +1,7 @@
+Projeto;
+
+Projeto Farol de Pedestre integrado com Farol de Carros, que deve ter as especificações:.
+O farol de carros deve ter o mesmo padrão de comportamento do projeto anterior "Farol Simples";
+No momento que o pedestre, pressionar o botão (Push Button), o farol de carros deve mudar para amarelo por dois segundos e depois mudar para o vermelho;
+Durante o momento que o farol de pedestre entrar no estágio verde, enquanto o farol de carros estiver vermelho, deve ficar três segundos verde fixo e depois apagar o verde, e por mais 3 segundos ficar piscando intermitentemente o vermelho, por um intervalo de 250 milissegundos, até ficar vermelho fixo;
+São dois leds para o pedestre (verde e vermelho) e três para os carros (verde, amartelo e vermelho);

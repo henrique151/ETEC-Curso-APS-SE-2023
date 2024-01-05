@@ -1,0 +1,26 @@
+#include <Servo.h>
+
+#define SERVO 6 
+
+const int pinPot = A0;
+Servo s; // Variável Servo
+int pos; // Posição Servo
+
+int valPot = 0; // Armanamento da leitura.
+
+
+void setup()
+{
+  s.attach(SERVO);
+  Serial.begin(9600);
+  pinMode(pinPot, INPUT);
+  s.write(0);
+}
+void loop()
+{
+  int valPot = analogRead(pinPot);
+  pos = map(valPot, 0, 1023, 0, 255);
+  Serial.println(map(valPot, 0, 1023, 0, 255));
+  s.write(pos);
+  
+}

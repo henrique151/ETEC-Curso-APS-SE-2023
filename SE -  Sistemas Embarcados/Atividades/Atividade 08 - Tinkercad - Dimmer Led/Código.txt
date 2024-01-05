@@ -1,0 +1,16 @@
+int pinPot = A5; // Indica a porta analógica ligada ao potenciômetro
+int pinLed = 9; // Indica a porta digital do led
+int valPot = 0; // Armanamento da leitura.
+
+void setup(){
+  pinMode(pinLed, OUTPUT);
+  pinMode(pinPot, INPUT);
+  Serial.begin(9600); 
+}
+
+void loop(){
+  valPot = analogRead(pinPot);
+  Serial.println(map(valPot, 0, 1023, 0, 255));
+  analogWrite(pinLed, map(valPot, 0, 1023, 0, 255));
+  delay(10);
+}

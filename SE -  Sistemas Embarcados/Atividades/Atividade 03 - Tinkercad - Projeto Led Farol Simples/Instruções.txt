@@ -1,0 +1,21 @@
+A atividade será feita no ambiente virtual Tinkercad que pode ser acessado em:
+
+https://www.tinkercad.com/
+
+Projeto;
+
+Projeto Farol Simples, contendo apenas um farol, que deve  terá as especificações:.
+Ascender o led verde por 5 segundos;
+Ao apagar o led verde, ascender o led amarelo por 2 segundos;
+Ao apagar o led amarelo, ascender o led vermelho por 5 segundos;
+Ao apagar o led vermelho, ascender o led verde e repetir a sequencia.
+Procedimento:
+
+As orientações serão realizadas em sala de aula.
+
+Entrega:
+
+- Arquivo *.PNG, contendo o esquema elétrico.
+- Arquivo *.TXT, contendo o código fonte.
+
+Após concluir a atividade, você deve postar na plataforma Microsoft Teams, não esquecendo de clicar em enviar para que a atividade não fique pendente.

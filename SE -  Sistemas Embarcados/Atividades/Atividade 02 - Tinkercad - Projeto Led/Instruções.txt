@@ -1,0 +1,33 @@
+A atividade será feita no ambiente virtual Tinkercad que pode ser acessado em:
+
+https://www.tinkercad.com/
+
+Projeto;
+
+Projeto Blink realizado com um diodo Led, que pisca em uma determinada frequência.
+
+Itens:
+
+1 - Arduino;
+1 - Protoboard;
+1 - Led;
+1 - Resistor;
+
+*  Jumper diversos;
+
+Procedimento:
+
+As orientações serão realizadas em sala de aula.
+
+Entrega:
+
+- Arquivo *.PNG, contendo o esquema elétrico.
+- Arquivo *.TXT, contendo o código fonte.
+
+Após concluir a atividade, você deve postar na plataforma Microsoft Teams, não esquecendo de clicar em enviar para que a atividade não fique pendente.
+
+Atividade fora do padrão solicitado, ou por algum outro motivo necessite de correção, deverá ser refeita, sendo assim fiquem atentos aos comentários realizados na devolução da atividade.
+
+Atenção toda atividade é devolvida com a nota, mas somente aquela que tiver solicitação para ser corrigida, deverá ser refeita e reenviada para nova correção dentro do prazo. 
+
+Sendo assim, por favor, não devolva atividades que não solicitem correção e que, portanto, já foram corrigidas e registradas.

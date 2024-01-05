@@ -1,0 +1,119 @@
+#include <LiquidCrystal.h>
+
+#define RS 13
+#define E 2
+#define D4 3
+#define D5 4
+#define D6 5
+#define D7 12
+
+int pinLedVermelho = 11;
+int pinLedAmarelo = 10;
+int pinLedVerde = 9;
+int pinTrigger = 7;
+int pinEecho = 6;
+float pulse;
+float dist_cm;
+float dist_in;
+
+
+
+LiquidCrystal lcd(RS, E, D4, D5, D6, D7);
+
+
+void setup()
+{
+  pinMode(pinLedVermelho , OUTPUT);
+  pinMode(pinLedAmarelo , OUTPUT);
+  pinMode(pinLedVerde , OUTPUT);
+  pinMode(pinTrigger , OUTPUT);
+  pinMode(pinEecho , INPUT);
+  digitalWrite(pinTrigger , LOW);
+  Serial.begin(9600);
+  
+  lcd.begin(16, 2);
+  lcd.clear();
+}
+
+
+void loop()
+{
+  trigPulse();
+  pulse = pulseIn(pinEecho , HIGH);
+  dist_cm = pulse / 57.00;
+  dist_in = pulse / 145.00;
+
+  if(dist_cm < 30.00)
+  {
+    digitalWrite(pinLedVermelho , HIGH);
+    digitalWrite(pinLedAmarelo , LOW);
+    digitalWrite(pinLedVerde , LOW);
+    imprime_mensagemtwo(0, 0, "Distancia:"); 
+    imprime_mensagem(11, 0, dist_cm);
+    imprime_mensagemtwo(14, 0, "cm");
+    imprime_mensagemtwo(0, 4, "Distancia:"); 
+    imprime_mensagem(11, 4, dist_in);
+    imprime_mensagemtwo(15, 4, "in");
+    delay(1000);
+    lcd.clear();
+  }
+
+  if(dist_cm >= 30.00 && dist_cm < 50.00)
+  {
+    digitalWrite(pinLedVermelho , LOW);
+    digitalWrite(pinLedAmarelo , HIGH);
+    digitalWrite(pinLedVerde , LOW);
+    imprime_mensagemtwo(0, 0, "Distancia:");
+    imprime_mensagemtwo(14, 0, "cm");
+    imprime_mensagem(11, 0, dist_cm);
+    imprime_mensagemtwo(0, 4, "Distancia:"); 
+    imprime_mensagem(11, 4, dist_in);
+    imprime_mensagemtwo(15, 4, "in");
+    delay(1000);
+    lcd.clear();
+  
+  }
+
+  if(dist_cm >= 50.00)
+  {
+    digitalWrite(pinLedVermelho , LOW);
+    digitalWrite(pinLedAmarelo , LOW);
+    digitalWrite(pinLedVerde , HIGH);
+    imprime_mensagemtwo(0, 0, "Distancia:");
+    imprime_mensagem(11, 0, dist_cm);
+    imprime_mensagemtwo(14, 0, "cm");
+    imprime_mensagemtwo(0, 4, "Distancia:"); 
+    imprime_mensagem(11, 4, dist_in);
+    imprime_mensagemtwo(14, 4, "in");
+    delay(1000);
+    lcd.clear();
+   
+    
+    
+  }
+
+  Serial.print("Valor do sensor de distancia: ");
+  Serial.println(dist_cm);
+	
+}
+
+
+void imprime_mensagem(int coluna, int linha,  int mensagem)
+{
+  lcd.setCursor(coluna, linha);
+  lcd.print(mensagem);
+}
+
+void imprime_mensagemtwo(int coluna, int linha, char* mensagem)
+{
+  lcd.setCursor(coluna, linha);
+  lcd.print(mensagem);
+}
+
+
+void trigPulse()
+{
+  digitalWrite(pinTrigger , HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pinTrigger , LOW);
+}

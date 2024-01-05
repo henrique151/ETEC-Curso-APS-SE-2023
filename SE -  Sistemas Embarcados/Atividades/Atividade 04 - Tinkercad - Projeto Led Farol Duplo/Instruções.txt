@@ -1,0 +1,13 @@
+A atividade será feita no ambiente virtual Tinkercad que pode ser acessado em:
+
+https://www.tinkercad.com/
+
+Projeto;
+
+Projeto Farol Duplo, contendo dois faróis, que devem ter as especificações:.
+Ascender o led verde por 5 segundos;
+Ao apagar o led verde, ascender o led amarelo por 2 segundos;
+Ao apagar o led amarelo, ascender o led vermelho por 5 segundos;
+Ao apagar o led vermelho, ascender o led verde e repetir a sequencia;
+Porém os dois faróis devem se intercalar, enquanto um estiver verde o outro deve estar vermelho;
+Os dois faróis não podem estar ao mesmo tempo amarelos, para evitar colisão de veículos.

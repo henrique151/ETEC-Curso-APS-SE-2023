@@ -1,0 +1,28 @@
+// C++ code
+//
+
+const byte ledPin = 9;
+
+const byte buttonPin = 2;
+
+volatile byte state = LOW;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(buttonPin), blink1, CHANGE);
+}
+
+
+void loop()
+{
+  digitalWrite(ledPin, state);
+  Serial.println(state);
+}
+
+void blink1()
+{
+  state = !state;
+}

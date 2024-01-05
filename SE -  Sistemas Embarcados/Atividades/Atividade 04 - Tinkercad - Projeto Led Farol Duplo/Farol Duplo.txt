@@ -1,0 +1,44 @@
+// C++ code
+//
+
+int Verde1 = 4;
+int Amerelo1 = 8;
+int Vemelho1 = 13;
+  
+int Verde2 = 2;
+int Amerelo2 = 1;
+int Vemelho2 = 0;
+  
+void setup()
+{
+  pinMode(Verde1, OUTPUT);
+  pinMode(Amerelo1, OUTPUT);
+  pinMode(Vemelho1, OUTPUT);
+  
+  pinMode(Verde2, OUTPUT);
+  pinMode(Amerelo2, OUTPUT);
+  pinMode(Vemelho2, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(Vemelho1, HIGH);
+  digitalWrite(Verde2, HIGH);
+  delay(5000);
+  digitalWrite(Verde2, LOW);
+  digitalWrite(Amerelo2, HIGH);
+  delay(2000);
+  digitalWrite(Vemelho2, HIGH);
+  digitalWrite(Amerelo2, LOW);
+  digitalWrite(Vemelho1, LOW);
+  digitalWrite(Verde1, HIGH);
+  delay(5000);
+  digitalWrite(Amerelo1, HIGH);
+  digitalWrite(Verde1, LOW);
+  digitalWrite(Amerelo1, HIGH);
+  delay(2000);
+  digitalWrite(Amerelo1, LOW);
+  digitalWrite(Vemelho2, LOW);
+  digitalWrite(Vemelho1, HIGH);
+  digitalWrite(Verde2, HIGH);
+}

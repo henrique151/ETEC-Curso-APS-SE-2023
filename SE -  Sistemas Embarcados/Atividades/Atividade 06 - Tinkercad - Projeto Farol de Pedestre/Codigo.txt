@@ -1,0 +1,62 @@
+int VerdeCar = 8;
+int AmareloCar = 9;
+int VermelhoCar = 10; 
+int PedVerde = 5;
+int PedVermelho = 6;
+
+int botao = 2;
+
+boolean delayVerde = false;
+
+void setup() {
+    pinMode(VerdeCar,OUTPUT);
+    pinMode(AmareloCar,OUTPUT);
+    pinMode(VermelhoCar,OUTPUT);
+    pinMode(PedVerde,OUTPUT);
+    pinMode(PedVermelho,OUTPUT);
+    pinMode(botao, INPUT);
+  attachInterrupt(digitalPinToInterrupt(botao), pedestre, CHANGE);
+}
+
+void loop() {
+  digitalWrite(VerdeCar, HIGH);
+  digitalWrite(AmareloCar, LOW);
+  digitalWrite(VermelhoCar, LOW);
+  
+  digitalWrite(PedVerde, LOW);
+  digitalWrite(PedVermelho, HIGH);
+  
+  for(int i = 0; delayVerde == false && i < 3000; i += 250){
+    delay(250);
+    }
+  
+  digitalWrite(VerdeCar, LOW);
+  digitalWrite(AmareloCar, HIGH);
+  digitalWrite(VermelhoCar, LOW);
+  delay(2000);
+  
+  digitalWrite(VerdeCar, LOW);
+  digitalWrite(AmareloCar,LOW);
+  digitalWrite(VermelhoCar,HIGH);
+  
+  digitalWrite(PedVerde, HIGH);
+  digitalWrite(PedVermelho,LOW);
+  
+  delay(3000);
+  digitalWrite(PedVerde, LOW);
+  
+  for(int i= 0; i<= 12; i++){
+   digitalWrite(PedVermelho, !(digitalRead(PedVermelho)));
+    	delay(250);
+  }
+  
+  if(delayVerde == true)
+  {
+    delayVerde = false;
+  }
+  }
+ 
+ void pedestre()
+{
+   delayVerde = true;
+}
