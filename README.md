@@ -86,6 +86,4 @@ O objetivo deste repositório é proporcionar um ambiente organizado e acessíve
 
 ---
 
-## 📌 Observações
-
-Este repositório é de uso educacional e poderá ser atualizado com novos materiais ao longo do
+**Bons estudos e sucesso na sua jornada em Análise de Sistemas e Sistemas Embarcados!**
