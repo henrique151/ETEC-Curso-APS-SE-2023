@@ -75,6 +75,11 @@ Estudantes do segundo ano dos cursos técnicos ou superiores na área de tecnolo
 
 ---
 
-## 📌 Observações
+## 🤝 Contribuição
 
-Este repositório é de uso educacional e poderá ser atualizado com novos materiais ao longo do
+Este repositório é um registro pessoal de estudos, mas sugestões de melhoria na organização ou documentação são sempre bem-vindas!
+
+---
+
+**Bons estudos e sucesso na sua jornada em Banco de Dados!**
+
